@@ -197,7 +197,7 @@ The console has auto completion of commands and command-history support that per
 
 In order to do anything on an Ethereum network you need ether, and to get it, you will need to generate an account. There are [various ways to go around this](http://ethdocs.org/en/latest/account-management.html), but the simplest one is through the console.
 
-**ATTENTION:** If you were running Ethereum during the olympic phase or earlier in the development, **do not reuse keys** generated before the release of the Frontier client software 1.0, because otherwise they might be vulnerable to [replay attacks](https://en.wikipedia.org/wiki/Replay_attack). Backup those keys, and create new ones using the Frontier release clients.
+**CAUTION:** If you were running Ethereum during the olympic phase or earlier in the development, **do not reuse keys** generated before the release of the Frontier client software 1.0, because otherwise they might be **vulnerable to [replay attacks](https://en.wikipedia.org/wiki/Replay_attack)**. Backup those keys, and create new ones using the Frontier release clients.
 
     personal.newAccount("Write here a good, randomly generated, passphrase!")
 
@@ -209,7 +209,7 @@ You may create as many or as few accounts as you like. By convention we call the
 
     web3.eth.accounts
 
-The ordering of the accounts reflects the time of their creation. Keyfiles are stored under DATADIR/keystore and can be transferred between clients by copying the files contained within. The files are encrypted with your passphrase and should be backed up if they contain any amount of ether. Note, however, if you transfer individual key files, the order of accounts presented may change and you may not end up the same account on the same position. So be aware that relying on account index is sound only as long as you do not copy external keyfiles to your keystore.
+The ordering of the accounts reflects the time of their creation. Keyfiles are stored under DATADIR/keystore and can be transferred between clients by copying the files contained within. **PRECAUTIONARY ADVICE:** _The files are encrypted with your passphrase and should be backed up if they contain any amount of ether_. Note, however, if you transfer individual key files, the order of accounts presented may change and you may not end up the same account on the same position. So be aware that relying on account index is sound only as long as you do not copy external keyfiles to your keystore.
 
 #### Get the balance of any account
 
